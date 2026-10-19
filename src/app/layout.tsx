@@ -6,18 +6,18 @@ import CartDrawer from "@/components/CartDrawer";
 import ReservationModal from "@/components/ReservationModal";
 
 export const metadata: Metadata = {
-  title: "Awadh Chai Khana | Authentic Lucknow Kulhad Chai & Nawabi Heritage",
+  title: "Awadh Chai Khana | Authentic Kulhad Chai on Mars (Olympus Mons Base)",
   description:
-    "Experience the royal heritage of Awadhi tea culture in Lucknow. From Hazratganj Kadak Kulhad Chai and Kashmiri Noon Chai to Makhan Malai Bun Maska. Established 1954.",
+    "Experience authentic Awadhi tea culture on the Red Planet. From Olympus Mons Zafrani Dum Chai and sub-zero Kashmiri Noon Chai to Makhan Malai Bun Maska. Established Sol 2054.",
   keywords: [
-    "Lucknow chai",
-    "Kulhad tea Lucknow",
-    "Hazratganj chai",
-    "Kashmiri noon chai Lucknow",
-    "Zafrani chai",
-    "Awadh Chai Khana",
-    "Makhan Malai bun maska",
-    "Lucknow tea shop",
+    "Mars chai",
+    "Kulhad tea Mars",
+    "Olympus Mons chai",
+    "Kashmiri noon chai Mars",
+    "Zafrani chai Mars",
+    "Awadh Chai Khana Mars",
+    "Makhan Malai bun maska Mars",
+    "Red Planet tea house",
   ],
 };
 
@@ -28,7 +28,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="min-h-screen bg-parchment-100 text-nawabi-900 antialiased selection:bg-zafran-200 selection:text-kulhad-900">
+      <body className="min-h-screen bg-parchment-100 text-nawabi-900 antialiased selection:bg-mars-200 selection:text-mars-950">
         <CartProvider>
           <Navbar />
           <main>{children}</main>

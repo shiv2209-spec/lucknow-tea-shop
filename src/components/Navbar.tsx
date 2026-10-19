@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Coffee, ShoppingBag, Calendar, Menu, X, Clock, MapPin, Sparkles } from "lucide-react";
+import { Coffee, ShoppingBag, Calendar, Menu, X, Clock, MapPin, Sparkles, Orbit } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 
 export default function Navbar() {
@@ -9,23 +9,23 @@ export default function Navbar() {
   const { cartCount, setIsCartOpen, setIsReservationOpen } = useCart();
 
   return (
-    <header className="sticky top-0 z-40 bg-parchment-100/95 backdrop-blur-md border-b border-kulhad-200/60 shadow-sm transition-all">
-      {/* Top Heritage Notice Bar */}
-      <div className="bg-gradient-to-r from-kulhad-900 via-zafran-900 to-kulhad-900 text-parchment-100 text-xs py-1.5 px-4">
+    <header className="sticky top-0 z-40 bg-parchment-100/95 backdrop-blur-md border-b border-mars-200/60 shadow-sm transition-all">
+      {/* Top Planetary Notice Bar */}
+      <div className="bg-gradient-to-r from-mars-950 via-kulhad-900 to-mars-950 text-parchment-100 text-xs py-1.5 px-4 border-b border-mars-800">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <Sparkles className="w-3.5 h-3.5 text-zafran-400 animate-pulse" />
+            <Orbit className="w-3.5 h-3.5 text-mars-400 animate-spin" />
             <span className="font-medium tracking-wide">
-              मुस्कुराइए, आप लखनऊ में हैं — Serving authentic Awadhi Kulhad Chai since 1954
+              मुस्कुराइए, आप मंगल ग्रह पर हैं — Awadhi Kulhad Chai at 0.38g Gravity • Olympus Mons
             </span>
           </div>
           <div className="hidden md:flex items-center space-x-4 text-parchment-200">
             <span className="flex items-center gap-1">
-              <Clock className="w-3 h-3 text-zafran-400" /> 6:00 AM – 11:45 PM
+              <Clock className="w-3 h-3 text-zafran-400" /> Sol 05:00 – Sol 23:30
             </span>
             <span>•</span>
             <span className="flex items-center gap-1">
-              <MapPin className="w-3 h-3 text-zafran-400" /> Mayfair, Hazratganj
+              <MapPin className="w-3 h-3 text-mars-400" /> Dome 01, Olympus Mons Base
             </span>
           </div>
         </div>
@@ -36,20 +36,20 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Brand Logo */}
           <a href="#" className="flex items-center space-x-3 group">
-            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-kulhad-600 to-zafran-600 flex items-center justify-center text-white shadow-md shadow-kulhad-600/30 group-hover:scale-105 transition-transform">
+            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-mars-600 via-kulhad-600 to-zafran-600 flex items-center justify-center text-white shadow-md shadow-mars-600/30 group-hover:scale-105 transition-transform">
               <Coffee className="w-6 h-6 text-zafran-100" />
             </div>
             <div className="flex flex-col">
               <div className="flex items-center space-x-1.5">
-                <span className="font-serif font-bold text-2xl tracking-tight text-kulhad-900">
+                <span className="font-serif font-bold text-2xl tracking-tight text-mars-950">
                   अवध Chai Khana
                 </span>
-                <span className="text-[10px] uppercase font-bold tracking-widest px-1.5 py-0.5 rounded bg-zafran-100 text-zafran-800 border border-zafran-300">
-                  LKO
+                <span className="text-[10px] uppercase font-bold tracking-widest px-1.5 py-0.5 rounded bg-mars-100 text-mars-900 border border-mars-300">
+                  MARS
                 </span>
               </div>
-              <span className="text-xs text-kulhad-600 tracking-wider font-medium">
-                HAZRATGANJ • CHOWK • GOMTI NAGAR
+              <span className="text-[11px] text-mars-700 tracking-wider font-semibold">
+                OLYMPUS MONS • VALLES MARINERIS • JEZERO
               </span>
             </div>
           </a>
@@ -58,27 +58,27 @@ export default function Navbar() {
           <nav className="hidden md:flex items-center space-x-8 text-sm font-medium text-nawabi-800">
             <a
               href="#menu"
-              className="hover:text-kulhad-600 transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-kulhad-600 after:scale-x-0 hover:after:scale-x-100 after:transition-transform"
+              className="hover:text-mars-600 transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-mars-600 after:scale-x-0 hover:after:scale-x-100 after:transition-transform"
             >
-              Khas Menu (मेन्यू)
+              Martian Menu (मेन्यू)
             </a>
             <a
               href="#customizer"
-              className="hover:text-kulhad-600 transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-kulhad-600 after:scale-x-0 hover:after:scale-x-100 after:transition-transform"
+              className="hover:text-mars-600 transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-mars-600 after:scale-x-0 hover:after:scale-x-100 after:transition-transform"
             >
               Chai Builder (अपनी चाय)
             </a>
             <a
               href="#heritage"
-              className="hover:text-kulhad-600 transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-kulhad-600 after:scale-x-0 hover:after:scale-x-100 after:transition-transform"
+              className="hover:text-mars-600 transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-mars-600 after:scale-x-0 hover:after:scale-x-100 after:transition-transform"
             >
-              Tehzeeb & Story (दास्तान)
+              Earth to Mars (दास्तान)
             </a>
             <a
               href="#outlets"
-              className="hover:text-kulhad-600 transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-kulhad-600 after:scale-x-0 hover:after:scale-x-100 after:transition-transform"
+              className="hover:text-mars-600 transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-mars-600 after:scale-x-0 hover:after:scale-x-100 after:transition-transform"
             >
-              Outlets (ठिकाने)
+              Colony Outlets (ठिकाने)
             </a>
           </nav>
 
@@ -87,17 +87,17 @@ export default function Navbar() {
             {/* Table Reservation Button */}
             <button
               onClick={() => setIsReservationOpen(true)}
-              className="hidden sm:inline-flex items-center space-x-1.5 px-3.5 py-2 rounded-full border border-kulhad-400 text-kulhad-800 text-xs font-semibold hover:bg-kulhad-50 transition-colors"
+              className="hidden sm:inline-flex items-center space-x-1.5 px-3.5 py-2 rounded-full border border-mars-400 text-mars-900 text-xs font-semibold hover:bg-mars-50 transition-colors"
             >
-              <Calendar className="w-3.5 h-3.5 text-kulhad-600" />
-              <span>Book a Baithak</span>
+              <Calendar className="w-3.5 h-3.5 text-mars-600" />
+              <span>Book Dome Baithak</span>
             </button>
 
             {/* Cart Trigger Button */}
             <button
               onClick={() => setIsCartOpen(true)}
               aria-label="View Cart"
-              className="relative p-2.5 rounded-full bg-kulhad-600 text-white hover:bg-kulhad-700 transition shadow-sm hover:scale-105 active:scale-95"
+              className="relative p-2.5 rounded-full bg-mars-600 text-white hover:bg-mars-700 transition shadow-sm hover:scale-105 active:scale-95"
             >
               <ShoppingBag className="w-5 h-5" />
               {cartCount > 0 && (
@@ -110,7 +110,7 @@ export default function Navbar() {
             {/* Mobile Hamburger Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg text-kulhad-800 hover:bg-kulhad-100 transition"
+              className="md:hidden p-2 rounded-lg text-mars-900 hover:bg-mars-100 transition"
               aria-label="Toggle navigation"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -121,45 +121,45 @@ export default function Navbar() {
 
       {/* Mobile Drawer Navigation */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-parchment-100 border-b border-kulhad-200 px-4 pt-3 pb-6 space-y-3 animate-in slide-in-from-top duration-200">
+        <div className="md:hidden bg-parchment-100 border-b border-mars-200 px-4 pt-3 pb-6 space-y-3 animate-in slide-in-from-top duration-200">
           <a
             href="#menu"
             onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2 rounded-md font-medium text-kulhad-900 hover:bg-kulhad-50"
+            className="block px-3 py-2 rounded-md font-medium text-mars-950 hover:bg-mars-50"
           >
-            Khas Menu (मेन्यू)
+            Martian Menu (मेन्यू)
           </a>
           <a
             href="#customizer"
             onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2 rounded-md font-medium text-kulhad-900 hover:bg-kulhad-50"
+            className="block px-3 py-2 rounded-md font-medium text-mars-950 hover:bg-mars-50"
           >
             Chai Builder (अपनी चाय)
           </a>
           <a
             href="#heritage"
             onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2 rounded-md font-medium text-kulhad-900 hover:bg-kulhad-50"
+            className="block px-3 py-2 rounded-md font-medium text-mars-950 hover:bg-mars-50"
           >
-            Tehzeeb & Story (दास्तान)
+            Earth to Mars (दास्तान)
           </a>
           <a
             href="#outlets"
             onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2 rounded-md font-medium text-kulhad-900 hover:bg-kulhad-50"
+            className="block px-3 py-2 rounded-md font-medium text-mars-950 hover:bg-mars-50"
           >
-            Outlets (ठिकाने)
+            Colony Outlets (ठिकाने)
           </a>
-          <div className="pt-2 border-t border-kulhad-200">
+          <div className="pt-2 border-t border-mars-200">
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
                 setIsReservationOpen(true);
               }}
-              className="w-full flex items-center justify-center space-x-2 py-2.5 rounded-lg bg-kulhad-700 text-white font-medium text-sm"
+              className="w-full flex items-center justify-center space-x-2 py-2.5 rounded-lg bg-mars-700 text-white font-medium text-sm"
             >
               <Calendar className="w-4 h-4" />
-              <span>Book a Baithak (Table)</span>
+              <span>Book Dome Baithak</span>
             </button>
           </div>
         </div>

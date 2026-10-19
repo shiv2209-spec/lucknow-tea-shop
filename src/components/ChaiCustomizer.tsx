@@ -1,27 +1,27 @@
 "use client";
 
 import React, { useState } from "react";
-import { Sparkles, Check, Flame, ShoppingBag, RotateCcw } from "lucide-react";
+import { Sparkles, Check, Flame, ShoppingBag, RotateCcw, Orbit } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 
 const BASES = [
-  { id: "kadak", name: "Kadak Assam CTC", price: 40, desc: "Bold, strong, dark amber liquor." },
+  { id: "kadak", name: "Kadak Assam CTC (Earth Vintage)", price: 40, desc: "Bold, strong, dark amber liquor brewed under 1 ATM pressure." },
   { id: "kesar", name: "Kashmiri Zafran Leaf", price: 65, desc: "Gentle floral notes with rich saffron essence." },
-  { id: "noon", name: "Kashmiri Noon Chai", price: 80, desc: "Pink salted traditional winter tea." },
-  { id: "sulaimani", name: "Awadhi Sulaimani Spiced", price: 45, desc: "Light citrusy black tea with mint." },
+  { id: "noon", name: "Kashmiri Noon Chai (Sub-Zero)", price: 80, desc: "Pink salted traditional brew for -60°C Martian nights." },
+  { id: "sulaimani", name: "Awadhi Sulaimani Spiced", price: 45, desc: "Light citrusy black tea with fresh greenhouse mint." },
 ];
 
 const MILKS = [
-  { id: "buffalo", name: "Rich Buffalo Milk", extra: 0, tag: "Traditional Choice" },
-  { id: "cow", name: "Light Cow Milk", extra: 0, tag: "Balanced" },
-  { id: "almond", name: "Artisanal Almond Milk", extra: 25, tag: "Dairy Free" },
+  { id: "hydro", name: "Jezero Biosphere Fresh Milk", extra: 0, tag: "Traditional Choice" },
+  { id: "cow", name: "Colony Light Milk", extra: 0, tag: "Balanced" },
+  { id: "almond", name: "Hydroponic Almond Milk", extra: 25, tag: "Plant-Based" },
   { id: "none", name: "No Milk (Black / Decoction)", extra: 0, tag: "Pure Leaf" },
 ];
 
 const SWEETENERS = [
   { id: "khand", name: "Desi Khand (Raw Sugar)", extra: 0 },
   { id: "gur", name: "Nawabi Desi Gur (Jaggery)", extra: 10 },
-  { id: "honey", name: "Wild Forest Honey", extra: 15 },
+  { id: "honey", name: "Wild Greenhouse Honey", extra: 15 },
   { id: "none", name: "Fika (Zero Sugar)", extra: 0 },
 ];
 
@@ -34,9 +34,9 @@ const SPICES = [
 ];
 
 const VESSELS = [
-  { id: "kulhad", name: "Traditional Baked Clay Kulhad (कुल्हड़)", price: 5, desc: "Adds authentic earthy fragrance" },
-  { id: "brass", name: "Classic Brass Glass (कांसा ग्लास)", price: 0, desc: "Classic royal Awadh style" },
-  { id: "togo", name: "Sealed Clay To-Go Cup", price: 10, desc: "Thermal sealed for take-away" },
+  { id: "kulhad", name: "Martian Regolith Clay Kulhad (कुल्हड़)", price: 5, desc: "Solar-kiln fired Martian soil; adds authentic earthy fragrance" },
+  { id: "thermos", name: "Pressurized Zero-G Tumbler", price: 0, desc: "Anti-gravity weighted base for rover rides" },
+  { id: "togo", name: "Airlock-Sealed Thermal Cup", price: 10, desc: "EVA spacesuit cup holder compatible" },
 ];
 
 export default function ChaiCustomizer() {
@@ -82,7 +82,7 @@ export default function ChaiCustomizer() {
 
     addToCart({
       id: `custom-chai-${Date.now()}`,
-      name: `Custom ${selectedBase.name}`,
+      name: `Custom Martian ${selectedBase.name.split(" ")[0]} Chai`,
       price: totalPrice,
       vessel: selectedVessel.name,
       image: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&q=80&w=800",
@@ -99,20 +99,20 @@ export default function ChaiCustomizer() {
   };
 
   return (
-    <section id="customizer" className="py-20 bg-parchment-200/50 border-y border-kulhad-200">
+    <section id="customizer" className="py-20 bg-parchment-200/50 border-y border-mars-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-kulhad-100 text-kulhad-900 text-xs font-semibold uppercase tracking-wider mb-3">
-            <Sparkles className="w-3.5 h-3.5 text-zafran-600" />
-            <span>Apni Pasand Ki Chai • अपनी चाय</span>
+          <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-mars-100 text-mars-950 text-xs font-semibold uppercase tracking-wider mb-3">
+            <Orbit className="w-3.5 h-3.5 text-mars-600 animate-spin" />
+            <span>Mars Colony Chai Customizer • अपनी चाय</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-kulhad-950 mb-3">
-            The Interactive Chai Customizer
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-mars-950 mb-3">
+            Brew in 0.38g Low Gravity
           </h2>
           <p className="text-sm sm:text-base text-nawabi-800/70">
-            Every Lucknawi has their personal philosophy of chai. Tailor your tea leaf base, milk density, desi sweeteners, hand-ground spices, and earthen cup.
+            Tailor your tea ration: select Earth-grown tea leaves, Jezero biosphere milk, hand-pounded spices, and solar-fired Martian regolith pottery.
           </p>
         </div>
 
@@ -120,13 +120,13 @@ export default function ChaiCustomizer() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* Controls Column */}
-          <div className="lg:col-span-8 space-y-8 bg-white p-6 sm:p-8 rounded-3xl border border-kulhad-200 shadow-sm">
+          <div className="lg:col-span-8 space-y-8 bg-white p-6 sm:p-8 rounded-3xl border border-mars-200 shadow-sm">
             
             {/* Step 1: Base Tea */}
             <div>
               <div className="flex items-center justify-between mb-3">
-                <label className="text-sm font-bold text-kulhad-900 flex items-center gap-2">
-                  <span className="w-6 h-6 rounded-full bg-kulhad-600 text-white text-xs flex items-center justify-center font-bold">1</span>
+                <label className="text-sm font-bold text-mars-950 flex items-center gap-2">
+                  <span className="w-6 h-6 rounded-full bg-mars-600 text-white text-xs flex items-center justify-center font-bold">1</span>
                   Select Tea Leaf Base (चाय की पत्ती)
                 </label>
               </div>
@@ -140,13 +140,13 @@ export default function ChaiCustomizer() {
                       onClick={() => setSelectedBase(base)}
                       className={`text-left p-3.5 rounded-xl border transition-all ${
                         isSelected
-                          ? "border-kulhad-600 bg-kulhad-50/70 ring-2 ring-kulhad-600/20"
-                          : "border-gray-200 hover:border-kulhad-300 bg-white"
+                          ? "border-mars-600 bg-mars-50/70 ring-2 ring-mars-600/20"
+                          : "border-gray-200 hover:border-mars-300 bg-white"
                       }`}
                     >
                       <div className="flex justify-between items-center">
-                        <span className="text-xs font-bold text-kulhad-950">{base.name}</span>
-                        <span className="text-xs font-bold text-kulhad-600">₹{base.price}</span>
+                        <span className="text-xs font-bold text-mars-950">{base.name}</span>
+                        <span className="text-xs font-bold text-mars-600">₹{base.price}</span>
                       </div>
                       <p className="text-[11px] text-gray-500 mt-1">{base.desc}</p>
                     </button>
@@ -157,9 +157,9 @@ export default function ChaiCustomizer() {
 
             {/* Step 2: Milk Selection */}
             <div>
-              <label className="text-sm font-bold text-kulhad-900 flex items-center gap-2 mb-3">
-                <span className="w-6 h-6 rounded-full bg-kulhad-600 text-white text-xs flex items-center justify-center font-bold">2</span>
-                Choose Your Milk Blend (दूध का चुनाव)
+              <label className="text-sm font-bold text-mars-950 flex items-center gap-2 mb-3">
+                <span className="w-6 h-6 rounded-full bg-mars-600 text-white text-xs flex items-center justify-center font-bold">2</span>
+                Choose Milk Density (दूध का चुनाव)
               </label>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
                 {MILKS.map((milk) => {
@@ -171,12 +171,12 @@ export default function ChaiCustomizer() {
                       onClick={() => setSelectedMilk(milk)}
                       className={`text-left p-3 rounded-xl border text-xs transition-all ${
                         isSelected
-                          ? "border-kulhad-600 bg-kulhad-50/70 font-semibold text-kulhad-950 ring-1 ring-kulhad-600"
-                          : "border-gray-200 text-gray-700 hover:border-kulhad-300"
+                          ? "border-mars-600 bg-mars-50/70 font-semibold text-mars-950 ring-1 ring-mars-600"
+                          : "border-gray-200 text-gray-700 hover:border-mars-300"
                       }`}
                     >
                       <div className="font-bold">{milk.name}</div>
-                      <div className="text-[10px] text-kulhad-600 mt-1">
+                      <div className="text-[10px] text-mars-600 mt-1">
                         {milk.extra > 0 ? `+₹${milk.extra}` : "Included"}
                       </div>
                     </button>
@@ -187,8 +187,8 @@ export default function ChaiCustomizer() {
 
             {/* Step 3: Sweetener */}
             <div>
-              <label className="text-sm font-bold text-kulhad-900 flex items-center gap-2 mb-3">
-                <span className="w-6 h-6 rounded-full bg-kulhad-600 text-white text-xs flex items-center justify-center font-bold">3</span>
+              <label className="text-sm font-bold text-mars-950 flex items-center gap-2 mb-3">
+                <span className="w-6 h-6 rounded-full bg-mars-600 text-white text-xs flex items-center justify-center font-bold">3</span>
                 Select Sweetener (मिठास)
               </label>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
@@ -201,12 +201,12 @@ export default function ChaiCustomizer() {
                       onClick={() => setSelectedSweetener(sw)}
                       className={`text-left p-3 rounded-xl border text-xs transition-all ${
                         isSelected
-                          ? "border-kulhad-600 bg-kulhad-50/70 font-semibold text-kulhad-950 ring-1 ring-kulhad-600"
-                          : "border-gray-200 text-gray-700 hover:border-kulhad-300"
+                          ? "border-mars-600 bg-mars-50/70 font-semibold text-mars-950 ring-1 ring-mars-600"
+                          : "border-gray-200 text-gray-700 hover:border-mars-300"
                       }`}
                     >
                       <div className="font-bold">{sw.name}</div>
-                      <div className="text-[10px] text-kulhad-600 mt-1">
+                      <div className="text-[10px] text-mars-600 mt-1">
                         {sw.extra > 0 ? `+₹${sw.extra}` : "Included"}
                       </div>
                     </button>
@@ -215,12 +215,12 @@ export default function ChaiCustomizer() {
               </div>
             </div>
 
-            {/* Step 4: Spices (Multi-select) */}
+            {/* Step 4: Spices */}
             <div>
               <div className="flex items-center justify-between mb-3">
-                <label className="text-sm font-bold text-kulhad-900 flex items-center gap-2">
-                  <span className="w-6 h-6 rounded-full bg-kulhad-600 text-white text-xs flex items-center justify-center font-bold">4</span>
-                  Pounded Awadhi Masalas (मसाले - बहुविकल्प)
+                <label className="text-sm font-bold text-mars-950 flex items-center gap-2">
+                  <span className="w-6 h-6 rounded-full bg-mars-600 text-white text-xs flex items-center justify-center font-bold">4</span>
+                  Awadhi Heritage Spices (मसाले - बहुविकल्प)
                 </label>
                 <span className="text-[11px] text-gray-500">Pick any combination</span>
               </div>
@@ -234,7 +234,7 @@ export default function ChaiCustomizer() {
                       onClick={() => toggleSpice(spice.id)}
                       className={`flex items-center justify-between p-3 rounded-xl border text-xs transition-all ${
                         isChecked
-                          ? "border-zafran-600 bg-zafran-50 text-zafran-950 font-bold"
+                          ? "border-mars-600 bg-mars-50 text-mars-950 font-bold"
                           : "border-gray-200 text-gray-700 hover:border-gray-300"
                       }`}
                     >
@@ -242,7 +242,7 @@ export default function ChaiCustomizer() {
                         <div
                           className={`w-4 h-4 rounded flex items-center justify-center border ${
                             isChecked
-                              ? "bg-zafran-600 border-zafran-600 text-white"
+                              ? "bg-mars-600 border-mars-600 text-white"
                               : "border-gray-300"
                           }`}
                         >
@@ -250,7 +250,7 @@ export default function ChaiCustomizer() {
                         </div>
                         <span>{spice.name}</span>
                       </div>
-                      <span className="text-[11px] text-zafran-800 font-semibold">
+                      <span className="text-[11px] text-mars-800 font-semibold">
                         +₹{spice.price}
                       </span>
                     </button>
@@ -261,9 +261,9 @@ export default function ChaiCustomizer() {
 
             {/* Step 5: Vessel */}
             <div>
-              <label className="text-sm font-bold text-kulhad-900 flex items-center gap-2 mb-3">
-                <span className="w-6 h-6 rounded-full bg-kulhad-600 text-white text-xs flex items-center justify-center font-bold">5</span>
-                Drinking Vessel (बर्तन)
+              <label className="text-sm font-bold text-mars-950 flex items-center gap-2 mb-3">
+                <span className="w-6 h-6 rounded-full bg-mars-600 text-white text-xs flex items-center justify-center font-bold">5</span>
+                Martian Drinking Vessel (बर्तन)
               </label>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 {VESSELS.map((v) => {
@@ -275,13 +275,13 @@ export default function ChaiCustomizer() {
                       onClick={() => setSelectedVessel(v)}
                       className={`text-left p-3.5 rounded-xl border transition-all ${
                         isSelected
-                          ? "border-kulhad-600 bg-kulhad-50/70 ring-1 ring-kulhad-600"
-                          : "border-gray-200 hover:border-kulhad-300 bg-white"
+                          ? "border-mars-600 bg-mars-50/70 ring-1 ring-mars-600"
+                          : "border-gray-200 hover:border-mars-300 bg-white"
                       }`}
                     >
-                      <div className="text-xs font-bold text-kulhad-950">{v.name}</div>
+                      <div className="text-xs font-bold text-mars-950">{v.name}</div>
                       <div className="text-[11px] text-gray-500 mt-1">{v.desc}</div>
-                      <div className="text-[10px] text-kulhad-700 font-bold mt-2">
+                      <div className="text-[10px] text-mars-700 font-bold mt-2">
                         {v.price > 0 ? `+₹${v.price}` : "Standard"}
                       </div>
                     </button>
@@ -294,13 +294,13 @@ export default function ChaiCustomizer() {
 
           {/* Real-Time Live Preview & Order Card */}
           <div className="lg:col-span-4 sticky top-28 space-y-4">
-            <div className="bg-gradient-to-br from-kulhad-900 via-kulhad-950 to-nawabi-950 text-parchment-100 p-6 rounded-3xl shadow-xl border border-kulhad-700/50">
+            <div className="bg-gradient-to-br from-mars-950 via-kulhad-950 to-nawabi-950 text-parchment-100 p-6 rounded-3xl shadow-xl border border-mars-800">
               
-              <div className="flex items-center justify-between pb-4 border-b border-kulhad-800">
+              <div className="flex items-center justify-between pb-4 border-b border-mars-800">
                 <div className="flex items-center space-x-2">
-                  <Flame className="w-4 h-4 text-zafran-400" />
+                  <Flame className="w-4 h-4 text-mars-400" />
                   <span className="text-xs font-bold uppercase tracking-wider text-zafran-300">
-                    Your Personalized Brew
+                    Your Personalized Martian Brew
                   </span>
                 </div>
                 <button
@@ -314,22 +314,22 @@ export default function ChaiCustomizer() {
 
               {/* Cup Visual Mock */}
               <div className="my-6 text-center">
-                <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-tr from-kulhad-600 to-zafran-500 flex items-center justify-center text-4xl shadow-lg border-4 border-kulhad-800/80">
-                  ☕
+                <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-tr from-mars-600 to-zafran-500 flex items-center justify-center text-4xl shadow-lg border-4 border-mars-800/80">
+                  🪐
                 </div>
                 <h3 className="font-serif text-xl font-bold mt-3 text-parchment-50">
-                  {selectedBase.name}
+                  {selectedBase.name.split("(")[0]}
                 </h3>
                 <p className="text-xs text-zafran-300 mt-0.5">
-                  Served in {selectedVessel.name.split(" ")[0]}
+                  Served in {selectedVessel.name.split("(")[0]}
                 </p>
               </div>
 
               {/* Summary Items */}
-              <div className="space-y-2 text-xs py-3 border-y border-kulhad-800 text-parchment-200">
+              <div className="space-y-2 text-xs py-3 border-y border-mars-800 text-parchment-200">
                 <div className="flex justify-between">
                   <span className="text-gray-400">Base Leaf:</span>
-                  <span className="font-medium text-white">{selectedBase.name}</span>
+                  <span className="font-medium text-white">{selectedBase.name.split("(")[0]}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-400">Milk:</span>
@@ -365,7 +365,7 @@ export default function ChaiCustomizer() {
                   className={`px-6 py-3.5 rounded-full font-bold text-xs flex items-center space-x-2 transition-all ${
                     added
                       ? "bg-emerald-600 text-white"
-                      : "bg-zafran-500 hover:bg-zafran-600 text-kulhad-950 shadow-lg shadow-zafran-500/20 hover:scale-105 active:scale-95"
+                      : "bg-mars-600 hover:bg-mars-500 text-white shadow-lg shadow-mars-600/30 hover:scale-105 active:scale-95"
                   }`}
                 >
                   {added ? (
@@ -385,8 +385,8 @@ export default function ChaiCustomizer() {
             </div>
 
             {/* Note box */}
-            <div className="bg-white p-4 rounded-2xl border border-kulhad-200 text-xs text-nawabi-800/80">
-              <span className="font-bold text-kulhad-800">Fresh Clay Guarantee:</span> Each clay kulhad is baked in terracotta kilns of Chinhat, Lucknow, completely biodegradable and unglazed for pure mineral aroma.
+            <div className="bg-white p-4 rounded-2xl border border-mars-200 text-xs text-nawabi-800/80">
+              <span className="font-bold text-mars-800">Low Gravity Guarantee:</span> Specially crafted weighted-base earthen cups prevent surface tension spilling in Martian 0.38g gravity, releasing pure petrichor with every warm sip.
             </div>
           </div>
 

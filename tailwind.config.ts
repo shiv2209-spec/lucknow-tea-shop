@@ -9,6 +9,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        mars: {
+          50: "#FFF5F2",
+          100: "#FFE6DF",
+          200: "#FFC9BC",
+          300: "#FFA38F",
+          400: "#F87154",
+          500: "#E2583E",
+          600: "#C1440E",
+          700: "#9A320A",
+          800: "#772608",
+          900: "#501A05",
+          950: "#2B0C02",
+        },
         kulhad: {
           50: "#FAF3EF",
           100: "#F3E3D9",
@@ -37,7 +50,7 @@ const config: Config = {
           100: "#E2E8F0",
           800: "#1E293B",
           900: "#0F172A",
-          950: "#080C15",
+          950: "#070B14",
         },
         parchment: {
           50: "#FDFCF9",
@@ -49,9 +62,6 @@ const config: Config = {
       fontFamily: {
         serif: ["var(--font-playfair)", "Georgia", "serif"],
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-      },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       },
     },
   },
